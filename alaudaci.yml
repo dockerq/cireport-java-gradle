@@ -1,0 +1,9 @@
+version: "0.1.0"
+pre_ci_boot:
+    image: gradle
+    tag: 4.4.1-jdk8-alpine
+ci:
+    - gradle clean build
+    - gradle sonarqube -Dsonar.host.url=https://sonar.adolphlwq.xyz
+    - cp Dockerfile $ALAUDACI_DEST_DIR
+    - cp run.sh $ALAUDACI_DEST_DIR
