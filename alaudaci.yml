@@ -1,7 +1,7 @@
 version: "0.1.0"
 pre_ci_boot:
     image: dockerq/container-gradle
-    tag: latest
+    tag: 3.0
 ci:
     - gradle clean build
     - gradle sonarqube -Dsonar.host.url=https://sonar.adolphlwq.xyz
